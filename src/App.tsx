@@ -1,10 +1,10 @@
 import { useAppDispatch, useAppSelector } from "./hooks/hook";
 import { ITodo, addTodo, completeTodo,  editHome,  editTodo,  removeTodo, setText, setTitle,  } from "./reducers/counter";
 
-// import Dialog from "@mui/material/Dialog";
-// import DialogActions from "@mui/material/DialogActions";
-// import DialogContent from "@mui/material/DialogContent";
-// import DialogTitle from "@mui/material/DialogTitle";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
 
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
   const dispatch = useAppDispatch()
   const todo = useAppSelector(store=>store.counter.data)
   const title = useAppSelector(store => store.counter.title)
-  // const modal = useAppSelector(store => store.counter.modal)
-  // const text = useAppSelector(store => store.counter.text)
+  const modal = useAppSelector(store => store.counter.modal)
+  const text = useAppSelector(store => store.counter.text)
   
   
 
@@ -45,11 +45,11 @@ const App = () => {
               placeholder="OK"
               id=""
             />
-            {/* <button onClick={() => dispatch(editTodo(e))}>Edit</button> */}
+            <button onClick={() => dispatch(editTodo(e))}>Edit</button>
           </div>
         );
       })}
-      {/* {modal ? (
+      {modal ? (
         <Dialog open={modal} aria-describedby="alert-dialog-slide-description">
           <DialogTitle>{"Use Google's location service?"}</DialogTitle>
           <DialogContent>
@@ -66,7 +66,7 @@ const App = () => {
           </DialogContent>
           <DialogActions></DialogActions>
         </Dialog>
-      ) : null} */}
+      ) : null}
     </div>
   );
   
