@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <input
+      <input
         value={title}
         onChange={(event) => dispatch(setText(event.target.value))}
         type="text"
@@ -27,7 +27,7 @@ const App = () => {
         id=""
         placeholder="Ok"
       />
-      <button onClick={() => dispatch(addTodo())}>Add</button> */}
+      <button onClick={() => dispatch(addTodo())}>Add</button>
 
       {todo.map((e: ITodo) => {
         return (
