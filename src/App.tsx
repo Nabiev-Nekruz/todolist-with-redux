@@ -38,13 +38,13 @@ const App = () => {
               {e.title}
             </h1>
             <button onClick={() => dispatch(removeTodo(e.id))}>Delete</button>
-            {/* <input
+            <input
               type="checkbox"
               onClick={() => dispatch(completeTodo(e.id))}
               name=""
               placeholder="OK"
               id=""
-            /> */}
+            />
             {/* <button onClick={() => dispatch(editTodo(e))}>Edit</button> */}
           </div>
         );
