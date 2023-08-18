@@ -46,6 +46,8 @@ const App = () => {
               id=""
             />
             <button onClick={() => dispatch(editTodo(e))}>Edit</button>
+            console.log(e);
+            
           </div>
         );
       })}
