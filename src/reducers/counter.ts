@@ -19,7 +19,7 @@ const initialState = {
     },
     {
       id: 2,
-      title: "Navruz",
+      title: "Navruzshoh",
       completed: false,
     },
     ],
@@ -39,7 +39,6 @@ export const counterSlice = createSlice({
                 return e.id != action.payload
             })
         },
-      
         setText: (state, action) => {
             state.title = action.payload
         },
@@ -52,8 +51,6 @@ export const counterSlice = createSlice({
             state.data.push(obj)
             state.title = ""
         },
-
-
         completeTodo: (state, action) => {
             state.data = state.data.map((e: ITodo) => {
                 if (e.id === action.payload) {
@@ -62,9 +59,6 @@ export const counterSlice = createSlice({
                 return e
             })
         },
-
-
-
         editHome: (state) => {
             let obj:ITodo[] = state.data.map((e: ITodo) => {
                 if (state.idx === e.id) {
@@ -75,14 +69,11 @@ export const counterSlice = createSlice({
             state.data.concat(obj)
             state.modal=false
       },
-        
-        
         editTodo: (state, action) => {
             state.modal = true
             state.text = action.payload.title
             state.idx = action.payload.id
         },
-
         setTitle: (state, action) => {
           state.text=action.payload  
         }

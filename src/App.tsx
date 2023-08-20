@@ -5,6 +5,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
+import { ChangeEvent } from "react";
 
 
 const App = () => {
@@ -21,7 +22,9 @@ const App = () => {
     <div>
       <input
         value={title}
-        onChange={(event) => dispatch(setText(event.target.value))}
+        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+          dispatch(setText(event.target.value))
+        }
         type="text"
         name=""
         id=""
@@ -47,19 +50,20 @@ const App = () => {
             />
             <button onClick={() => dispatch(editTodo(e))}>Edit</button>
             {/* console.log(e); */}
-            
           </div>
         );
       })}
       {modal ? (
         <Dialog open={modal} aria-describedby="alert-dialog-slide-description">
-          <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+          <DialogTitle>{"Edit text"}</DialogTitle>
           <DialogContent>
             <form>
               <input
                 type="text"
                 value={text}
-                onChange={(event) => dispatch(setTitle(event.target.value))}
+                onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                  dispatch(setTitle(event.target.value))
+                }
                 name="nabi"
                 id=""
               />
